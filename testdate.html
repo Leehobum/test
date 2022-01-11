@@ -1,0 +1,37 @@
+<html>
+ <head>
+ <title>test</title>
+ <script language="JavaScript">
+ 
+ //실제로 날수의 차이를 구하는 함수
+ function dayDiff(d1,d2){
+  var date1 = new Date(d1);
+  var date2 = new Date(d2);
+  return Math.ceil((date2 - date1) / 1000 / 24 / 60 / 60); }
+ //예제용 페이지에서 사용하는 함수
+ function calc(){
+ var d1 = document.test.t1.value;
+ var d2 = document.test.t2.value;
+  document.test.t3.value = dayDiff(d1,d2);
+ }
+ //페이지 초기화시 날짜를 보여줌(형식)
+ function init(){
+ document.test.t1.value = Date();
+ document.test.t2.value = Date();
+  calc();
+ }
+ 
+ </script>
+ </head>
+<body onload=init();>
+<center>
+<tabel border=1>
+<FORM NAME="test">
+<h3>To get two date difference</h3>
+Date 1: <INPUT TYPE="date" NAME="t1" size=40><br>
+Date 2: <INPUT TYPE="date" NAME="t2" size=40><br>
+Differnce : <INPUT TYPE="text" NAME="t3"><br><br>
+<INPUT TYPE="button" NAME="button1" VALUE=" Calculate " onClick="calc(this.form);">
+</FORM>
+</body>
+</html>
